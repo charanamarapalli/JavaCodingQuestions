@@ -1,5 +1,6 @@
 package strings;
 
+
 public class AddTwoBinary {
 public static void main(String[] args) {
 	//logic -- 1+1=10, 0+1=1, 0+0=0, 1+1+1=11

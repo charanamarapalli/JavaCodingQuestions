@@ -42,6 +42,11 @@
     <version>2.10.1</version>
 </dependency>
 
+  	<dependency>
+  		<groupId>SeleniumProjects</groupId>
+  		<artifactId>SeleniumProject1</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
   </dependencies>
   
    <build>

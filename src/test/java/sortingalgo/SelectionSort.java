@@ -1,7 +1,9 @@
 package sortingalgo;
 
 public class SelectionSort {
-
+	//Smallest element is brought to front in each loop 
+	//Find smallest element in every iteration and put it in starting position
+	
 	//entire array is unsorted -- but in insertion, assumes first element is already sorted
 	//theory - select the smallest element and place it.
 	//initially assume, all elements are unsorted - so loop from 0 to n-1.
