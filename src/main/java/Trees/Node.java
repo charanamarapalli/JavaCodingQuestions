@@ -1,9 +1,8 @@
 package Trees;
 
-import java.util.*;
-
-import org.apache.commons.lang3.tuple.Pair;
-
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 public class Node {
 	int data;
 	Node left;
@@ -52,7 +51,7 @@ public class Node {
 		 * int arr[]= {0}; maximumPathSum(root, arr); System.out.println(arr[0]);
 		 */
 		 
-		 zigzagTraversal(root);
+		 //zigzagTraversal(root);
 		
 		
 	}
@@ -147,54 +146,54 @@ public class Node {
 		}
 	}
 
-	public static void levelOrderTraversal(Node root) {
-		if (root == null)
-			return;
-		Queue<Node> queue = new LinkedList<>();
-		ArrayList<ArrayList<Integer>> list = new ArrayList<>();
-		queue.add(root);
-		while (!queue.isEmpty()) {
-			int currentLevelSize = queue.size();
-			ArrayList<Integer> subList = new ArrayList<Integer>();
-			for (int i = 0; i < currentLevelSize; i++) {
-				if (queue.peek().left != null)
-					queue.add(queue.peek().left);
-				if (queue.peek().right != null)
-					queue.add(queue.peek().right);
-				subList.add(queue.poll().data);
-			}
-			list.add(subList);
-		}
-		list.stream().forEach(e -> System.out.println(e));
+//	public static void levelOrderTraversal(Node root) {
+//		if (root == null)
+//			return;
+//		Queue<Node> queue = new LinkedList<Node>();
+//		ArrayList<ArrayList<Integer>> list = new ArrayList<>();
+//		queue.add(root);
+//		while (!queue.isEmpty()) {
+//			int currentLevelSize = queue.size();
+//			ArrayList<Integer> subList = new ArrayList<Integer>();
+//			for (int i = 0; i < currentLevelSize; i++) {
+//				if (queue.peek().left != null)
+//					queue.add(queue.peek().left);
+//				if (queue.peek().right != null)
+//					queue.add(queue.peek().right);
+//				subList.add(queue.poll().data);
+//			}
+//			list.add(subList);
+//		}
+//		list.stream().forEach(e -> System.out.println(e));
+//
+//	}
 
-	}
-
-	public static int sumOfLeftLeafs(Node root) {
-		if (root == null)
-			return 0;
-		int sum = 0;
-		Queue<Node> queue = new LinkedList<Node>();
-		queue.add(root);
-		while (!queue.isEmpty()) {
-
-			for (int i = 0; i < queue.size(); i++) {
-				if (queue.peek().left != null) {
-					System.out.println("entered here");
-					sum = sum + queue.peek().left.data;
-					queue.add(queue.peek().left);
-				}
-				if (queue.peek().right != null) {
-					System.out.println("entered there");
-					queue.add(queue.peek().right);
-				}
-				((LinkedList<Node>) queue).pop();
-			}
-
-		}
-		System.out.println(queue.size());
-
-		return sum;
-	}
+//	public static int sumOfLeftLeafs(Node root) {
+//		if (root == null)
+//			return 0;
+//		int sum = 0;
+//		Queue<Node> queue = new LinkedList<Node>();
+//		queue.add(root);
+//		while (!queue.isEmpty()) {
+//
+//			for (int i = 0; i < queue.size(); i++) {
+//				if (queue.peek().left != null) {
+//					System.out.println("entered here");
+//					sum = sum + queue.peek().left.data;
+//					queue.add(queue.peek().left);
+//				}
+//				if (queue.peek().right != null) {
+//					System.out.println("entered there");
+//					queue.add(queue.peek().right);
+//				}
+//				((LinkedList<Node>) queue).pop();
+//			}
+//
+//		}
+//		System.out.println(queue.size());
+//
+//		return sum;
+//	}
 
 	public static int recursiveMaximumDepthTree(Node node) {
 		if (node == null)
@@ -240,32 +239,32 @@ public class Node {
 		return node.data + Math.max(leftSum, rightSum);
 	}
 	
-	public static void zigzagTraversal(Node node) {
-		if(node==null) return;
-		Queue<Node> queue = new LinkedList<>();
-		ArrayList<List<Integer>> finalList = new ArrayList<>();
-		boolean flag=true;
-		queue.add(node);
-		while(queue.size()!=0) {
-	    List<Integer> rowList = new ArrayList<>();
-	    int currSize=queue.size();
-		for(int i=0; i<currSize;i++) {
-			if(queue.peek().left!=null) {queue.add(queue.peek().left);}
-			if(queue.peek().right!=null) {queue.add(queue.peek().right);}
-			if(flag==true) {
-				rowList.add(queue.remove().data);
-			}
-			else {
-				rowList.add(0, queue.remove().data);
-
-			}
-			}
-		finalList.add(rowList);
-		flag=!flag;
-		}
-		
-		finalList.stream().forEach(e-> System.out.println(e));
-		}
+//	public static void zigzagTraversal(Node node) {
+//		if(node==null) return;
+//		Queue<Node> queue = new LinkedList<>();
+//		ArrayList<List<Integer>> finalList = new ArrayList<>();
+//		boolean flag=true;
+//		queue.add(node);
+//		while(queue.size()!=0) {
+//	    List<Integer> rowList = new ArrayList<>();
+//	    int currSize=queue.size();
+//		for(int i=0; i<currSize;i++) {
+//			if(queue.peek().left!=null) {queue.add(queue.peek().left);}
+//			if(queue.peek().right!=null) {queue.add(queue.peek().right);}
+//			if(flag==true) {
+//				rowList.add(queue.remove().data);
+//			}
+//			else {
+//				rowList.add(0, queue.remove().data);
+//
+//			}
+//			}
+//		finalList.add(rowList);
+//		flag=!flag;
+//		}
+//		
+//		finalList.stream().forEach(e-> System.out.println(e));
+//		}
 		
 	
 	
